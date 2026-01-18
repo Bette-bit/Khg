@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro Player</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden; /* يمنع التمرير عند التكبير */
+    }
+
+    #appImage {
+      width: 50px;       /* الحجم الابتدائي */
+      height: auto;
+      cursor: pointer;
+      border-radius: 12px;
+      transition: all 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+
+<img id="appImage" src="Pq.9.png" alt="Pro Player">
+
+<script>
+  const img = document.getElementById('appImage');
+
+  img.addEventListener('click', function() {
+    // تكبير الصورة لتغطي الشاشة
+    img.style.width = '100vw';
+    img.style.height = '100vh';
+    img.style.borderRadius = '0';
+
+    // إنشاء رابط تحميل التطبيق وبدء التحميل
+    const link = document.createElement('a');
+    link.href = 'Enternet_1.0_src.apk'; // اسم التطبيق الجديد
+    link.download = '';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+</script>
+
+</body>
+</html>
